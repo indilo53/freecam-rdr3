@@ -5,8 +5,8 @@ local RotToQuat = function(rot)
 	local pitch = math.rad(rot.x)
 	local roll  = math.rad(rot.y)
 	local yaw   = math.rad(rot.z)
-
-  local cy = math.cos(yaw   * 0.5)
+	
+        local cy = math.cos(yaw   * 0.5)
 	local sy = math.sin(yaw   * 0.5)
 	local cr = math.cos(roll  * 0.5)
 	local sr = math.sin(roll  * 0.5)
@@ -14,8 +14,8 @@ local RotToQuat = function(rot)
 	local sp = math.sin(pitch * 0.5)
 
 	return quat(
-    cy * cr * cp + sy * sr * sp, -- w
-    cy * sp * cr - sy * cp * sr, -- x
+          cy * cr * cp + sy * sr * sp, -- w
+          cy * sp * cr - sy * cp * sr, -- x
 	  cy * cp * sr + sy * sp * cr, -- y
 	  sy * cr * cp - cy * sr * sp  -- z
   )
